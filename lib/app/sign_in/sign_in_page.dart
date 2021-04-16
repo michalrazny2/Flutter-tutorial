@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorial_1/common_widgets/custom_raised_button.dart';
+import 'package:flutter_tutorial_1/common_widgets/sign_in_button.dart';
 
 class SignInPage extends StatelessWidget {
   @override
@@ -28,18 +30,45 @@ class SignInPage extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
-          SizedBox(height: 8.0),
-          RaisedButton(
-            child: Text(
-                "Sign in with Google",
-              style: TextStyle(
-                color: Colors.black12,
-                fontSize: 12.0,
-              ),
-            ),
+          SizedBox(height: 40.0),
+          SignInButton(
+            text: "Sign in with Google",
+            textColor: Colors.black12,
             color: Colors.white,
-            onPressed: _signInWithGoogle,
+            onPressed: () {},
           ),
+          SizedBox(height: 8.0),
+          SignInButton(
+            text: "Sign in with Facebook",
+            textColor: Colors.white,
+            color: Color(0xFF334092),
+            onPressed: () {},
+          ),
+          SizedBox(height: 8.0),
+          SignInButton(
+            text: "Sign in with email",
+            textColor: Colors.white,
+            color: Colors.teal[700],
+            onPressed: () {},
+          ),
+          SizedBox(height: 8.0),
+          Text(
+            "or",
+            style: TextStyle(
+                fontSize: 14.0,
+                color: Colors.black87,
+            ),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 8.0),
+          SignInButton(
+            text: "Go anonymous",
+            textColor: Colors.black,
+            color: Colors.lime[300],
+            onPressed: () {},
+          ),
+          SizedBox(height: 8.0),
+          Image.asset('images/images/google-logo.png')
         ],
       ),
     );
