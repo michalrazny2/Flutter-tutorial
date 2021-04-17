@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorial_1/common_widgets/sign_in_button.dart';
-
 import 'custom_raised_button.dart';
 
 class SocialSignInButton extends CustomRaisedButton {

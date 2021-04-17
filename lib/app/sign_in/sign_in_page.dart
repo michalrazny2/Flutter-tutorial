@@ -9,8 +9,23 @@ class SignInPage extends StatelessWidget {
 
   Future<void> _signInAnonymously() async {
     try {
-      final user = await auth.signInAnonymously();
-      print('${user.uid}');
+      await auth.signInAnonymously();
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
+  Future<void> _signInWithGoogle() async {
+    try {
+      await auth.signInWithGoogle();
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
+  Future<void> _signInWithFacebook() async {
+    try {
+      await auth.signInWithFacebook();
     } catch (e) {
       print(e.toString());
     }
@@ -49,7 +64,7 @@ class SignInPage extends StatelessWidget {
             text: "Sign in with Google",
             textColor: Colors.black,
             color: Colors.white,
-            onPressed: () {},
+            onPressed: _signInWithGoogle,
           ),
           SizedBox(height: 8.0),
           SocialSignInButton(
@@ -57,7 +72,7 @@ class SignInPage extends StatelessWidget {
             text: "Sign in with Facebook",
             textColor: Colors.white,
             color: Color(0xFF334092),
-            onPressed: () {},
+            onPressed: _signInWithFacebook,
           ),
           SizedBox(height: 8.0),
           SignInButton(
@@ -87,7 +102,4 @@ class SignInPage extends StatelessWidget {
     );
   }
 
-  void _signInWithGoogle() {
-    // TODO: Auth with google
-  }
 }
