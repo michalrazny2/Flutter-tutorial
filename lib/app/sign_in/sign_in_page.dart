@@ -31,8 +31,8 @@ class SignInPage extends StatelessWidget {
     }
   }
 
-  void _signInWithEmail(BuildContext context) async {
-
+  Future<void> _signInWithEmail(BuildContext context) async {
+    // TODO: to be filled later on
   }
 
   @override
@@ -83,7 +83,7 @@ class SignInPage extends StatelessWidget {
             text: "Sign in with email",
             textColor: Colors.white,
             color: Colors.teal[700],
-            onPressed: _signInWithEmail(context),
+            onPressed: () => _signInWithEmail(context),
           ),
           SizedBox(height: 8.0),
           Text(
