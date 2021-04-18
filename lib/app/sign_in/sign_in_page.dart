@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorial_1/app/sign_in/email_sign_in_page.dart';
 import 'package:flutter_tutorial_1/common_widgets/sign_in_button.dart';
 import 'package:flutter_tutorial_1/common_widgets/social_sign_in_button.dart';
 import 'package:flutter_tutorial_1/services/auth.dart';
@@ -32,7 +33,14 @@ class SignInPage extends StatelessWidget {
   }
 
   Future<void> _signInWithEmail(BuildContext context) async {
-    // TODO: to be filled later on
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        fullscreenDialog: true,
+        builder: (context) => EmailSignInPage(
+          auth: auth,
+        ),
+      ),
+    );
   }
 
   @override
